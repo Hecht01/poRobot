@@ -33,14 +33,14 @@ class DataExtractor():
             POinfo["Purch. Org."] = "redacted"
             POinfo["Purch. Group"] = "redacted"
             POinfo["Company Code"] = "redacted"
-            POinfo["matGroup"] = "1099" 
+            POinfo["matGroup"] = "redacted" 
             POinfo["plant"] = "redacted"
             POinfo["MatCat"] = "0"
             POinfo["materialUsage"] = "2"
             POinfo["matOrigin"] = "0"
             POinfo["NCMCode"] = "DIVERSOS"
-            POinfo["GLAccount"] = "600010"
-            POinfo["Order"] = "200000"
+            POinfo["GLAccount"] = "redacte"
+            POinfo["Order"] = "redacted"
             POinfo["LongText"] = po["observations"]            
             POinfo["items"] = []
             for item in po["items"]:
