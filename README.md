@@ -7,7 +7,10 @@ The Robot is currently being tested for QA purposes, and will be utilized by the
 It has been accepted by the purchasing department.
 
 ### Libraries
-requests
-pyautogui
-pynput
-pyperclip
+<ul>
+  <li>requests</li>
+  <li>pyautogui</li>
+  <li>pynput</li>
+  <li>pyperclip</li>
+</ul>
+
