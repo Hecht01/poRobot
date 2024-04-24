@@ -3,16 +3,17 @@ import time as t
 import pyperclip as pycl
 import requests
 import json
+from pynput.keyboard import Key,Controller
 
 from DataExtractor import DataExtractor
+
+keyboard = Controller()
 
 def select():
 
     pg.doubleClick()
     t.sleep(0.5)
     
-
-
 
 def run():
 
@@ -55,7 +56,7 @@ def run():
 
 
 
-#Done
+
 def enterItems(item, itemNum):
 
     t.sleep(1)
@@ -63,7 +64,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["A"])
+    keyboard.type(item["A"])
 
     t.sleep(3)
 
@@ -71,7 +72,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["shortText"])
+    keyboard.type(item["shortText"])
 
     t.sleep(3)
 
@@ -79,7 +80,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["poQuantity"])
+    keyboard.type(item["poQuantity"])
 
     t.sleep(3)
 
@@ -87,7 +88,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["unit"])
+    keyboard.type(item["unit"])
 
     t.sleep(3)
 
@@ -95,7 +96,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["deliveryDate"])
+    keyboard.type(item["deliveryDate"])
 
     t.sleep(3)
 
@@ -103,7 +104,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(str(item["netPrice"]))
+    keyboard.type(str(item["netPrice"]))
 
     t.sleep(3)
 
@@ -111,7 +112,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write("1099")
+    keyboard.type("1099")
 
     t.sleep(3)
 
@@ -119,7 +120,7 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write("6071")
+    keyboard.type("6071")
 
     
     t.sleep(3)
@@ -133,13 +134,13 @@ def enterItems(item, itemNum):
     t.sleep(0.2)
     pg.click()
     t.sleep(1)
-    pg.write(item["ReqmtNo"])
+    keyboard.type(item["ReqmtNo"])
 
     t.sleep(2)
     pg.moveTo(240,830)
     pg.click()
 
-#Done
+
 def start():
     
 
@@ -148,22 +149,22 @@ def start():
     pg.click(180,130)
     print(pg.position())
     t.sleep(2)
-    pg.write("ME21N")
+    keyboard.type("redacted")
     t.sleep(0.1)
 
     pg.hotkey("enter")
     
     t.sleep(5)
 
-#Done
+
 def supplier(purchaseOrder):
 
     t.sleep(1)
-    pg.write(purchaseOrder["SupplierNum"])
+    keyboard.type(purchaseOrder["SupplierNum"])
     t.sleep(0.3)
     pg.hotkey("enter")
 
-#Done
+
 def orgData(purchaseOrder):
 
     t.sleep(2)
@@ -176,7 +177,7 @@ def orgData(purchaseOrder):
     pg.moveTo(260,300)
     select()
     t.sleep(2)
-    pg.write(purchaseOrder["Purch. Org."])
+    keyboard.type(purchaseOrder["Purch. Org."])
     
     t.sleep(2)
 
@@ -188,13 +189,13 @@ def orgData(purchaseOrder):
     t.sleep(2)
     select()
     t.sleep(2)
-    pg.write(purchaseOrder["Purch. Group"])
+    keyboard.type(purchaseOrder["Purch. Group"])
     t.sleep(2)
     pg.hotkey("enter")
 
     t.sleep(2)
 
-#Done
+
 def deliveryInvoice(purchaseOrder):
 
     t.sleep(2)
@@ -205,7 +206,7 @@ def deliveryInvoice(purchaseOrder):
     pg.moveTo(280,300)
     select()
     t.sleep(1)
-    pg.write(purchaseOrder["PaymentTerms"])
+    keyboard.type(purchaseOrder["PaymentTerms"])
 
     t.sleep(1)
 
@@ -216,7 +217,7 @@ def deliveryInvoice(purchaseOrder):
     pg.moveTo(285,430)
     select()
     t.sleep(1)
-    pg.write(purchaseOrder["incoterms"][1])
+    keyboard.type(purchaseOrder["incoterms"][1])
 
     t.sleep(1)
     
@@ -228,9 +229,9 @@ def deliveryInvoice(purchaseOrder):
     t.sleep(0.5)
     pg.moveTo(600, 430)
     t.sleep(1)
-    pg.write(purchaseOrder["incoterms"][0])
+    keyboard.type(purchaseOrder["incoterms"][0])
 
-#Done
+
 def brazil(purchaseOrder):
     pg.hotkey("enter")
     t.sleep(1)
@@ -243,7 +244,7 @@ def brazil(purchaseOrder):
     pg.moveTo(240,700)
     pg.click()
     t.sleep(1)
-    pg.write(purchaseOrder["materialUsage"])
+    keyboard.type(purchaseOrder["materialUsage"])
     t.sleep(0.5)
     pg.hotkey("enter")
     t.sleep(1)
@@ -251,7 +252,7 @@ def brazil(purchaseOrder):
     pg.moveTo(680,700)
     pg.click()
     t.sleep(1)
-    pg.write(purchaseOrder["MatCat"])
+    keyboard.type(purchaseOrder["MatCat"])
     t.sleep(0.5)
     pg.hotkey("enter")
     t.sleep(1)
@@ -259,7 +260,7 @@ def brazil(purchaseOrder):
     pg.moveTo(240,735)
     pg.click()
     t.sleep(1)
-    pg.write(purchaseOrder["matOrigin"])
+    keyboard.type(purchaseOrder["matOrigin"])
     t.sleep(1)
 
     pg.moveTo(280,770)
@@ -272,20 +273,20 @@ def brazil(purchaseOrder):
     pg.moveTo(240,770)
     pg.mouseUp()
     t.sleep(1)
-    pg.write(purchaseOrder["NCMCode"])
+    keyboard.type(purchaseOrder["NCMCode"])
     t.sleep(0.5)
     pg.hotkey("enter")
 
     t.sleep(3)
 
-#Done
+
 def accountAssignment(purchaseOrder):
 
     t.sleep(3)
 
     pg.moveTo(300,670)
     select()
-    pg.write(purchaseOrder["GLAccount"])
+    keyboard.type(purchaseOrder["GLAccount"])
     t.sleep(0.5)
     pg.hotkey("enter")
     t.sleep(1)
@@ -294,14 +295,14 @@ def accountAssignment(purchaseOrder):
     t.sleep(0.5)
     pg.click()
     t.sleep(1)
-    pg.write(purchaseOrder["Order"])
+    keyboard.type(purchaseOrder["Order"])
     pg.hotkey("enter")
     t.sleep(1)
 
     pg.moveTo(30,500)
     select()
 
-#Done
+
 def text(purchaseOrder):
 
     t.sleep(2)
@@ -312,10 +313,10 @@ def text(purchaseOrder):
     t.sleep(0.5)
     pg.click()
     t.sleep(0.5)
-    pg.write(purchaseOrder["LongText"])
+    keyboard.type(purchaseOrder["LongText"])
 
 
-#Done
+
 def getSAPNumber():
     t.sleep(3)
     pg.moveTo(300,130)
@@ -341,10 +342,10 @@ def getSAPNumber():
     
     return sapNum
 
-#To Test
+
 def end(donePO):
 
-    url = f"http://brind1as0004:3001/purchase-request/approvement?current_user=po_robot"
+    url = f"redacted"
     
     response = requests.put(url, json={"pr_id": donePO[0] ,"purchase_request_pon": donePO[1],
                                         "requester_id" : donePO[2], "status": 5})
