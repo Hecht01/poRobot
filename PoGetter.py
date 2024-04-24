@@ -5,8 +5,7 @@ class POGetter():
 
 
     def __init__(self):
-
-        self.rawData = requests.get("http://brind1as0004:3001/purchase-requests").json()
+        self.rawData = requests.get("redacted").json()
         self.purchaseOrders = []
         self.validStatus = 5
 
