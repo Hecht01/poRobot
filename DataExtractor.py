@@ -30,11 +30,11 @@ class DataExtractor():
             POinfo["PaymentTerms"] = po["payment_condition"]
             POinfo["RequesterId"] = po["requester_id"]
             POinfo["incoterms"] = [po["shipper"], po["shipping_type"]]
-            POinfo["Purch. Org."] = "6071"
-            POinfo["Purch. Group"] = "103"
-            POinfo["Company Code"] = "6071"
+            POinfo["Purch. Org."] = "redacted"
+            POinfo["Purch. Group"] = "redacted"
+            POinfo["Company Code"] = "redacted"
             POinfo["matGroup"] = "1099" 
-            POinfo["plant"] = "6071"
+            POinfo["plant"] = "redacted"
             POinfo["MatCat"] = "0"
             POinfo["materialUsage"] = "2"
             POinfo["matOrigin"] = "0"
